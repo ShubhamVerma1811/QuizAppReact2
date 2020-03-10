@@ -9,10 +9,16 @@ export default function Choices(props) {
 
   choicesList = choicesList.concat(choiceList);
 
+  function checkResults(e) {
+    console.log(e.target.textContent);
+  }
+
   return (
     <div>
       {choicesList.map(item => (
-        <li key={choicesList.indexOf(item)}>{item}</li>
+        <li onClick={checkResults} key={choicesList.indexOf(item)}>
+          {item}
+        </li>
       ))}
     </div>
   );

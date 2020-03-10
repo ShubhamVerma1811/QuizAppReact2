@@ -5,7 +5,7 @@ export default function Questions() {
   const [results, setResults] = useState([]);
   const questionsList = [];
   let index = 0;
-  let currentQuestion;
+  const [currentQuestion, setCurrentQuestion] = useState();
 
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
@@ -17,18 +17,19 @@ export default function Questions() {
   }, []);
 
   function nextQuestion() {
-    index++;
-    currentQuestion = questionsList[index++];
-    console.log(currentQuestion);
+    if (index < results.length) {
+      index++;
+      setCurrentQuestion(questionsList[index]);
+    }
   }
 
   if (results.length > 0) {
     results.map(item => {
       questionsList.push(item.question);
-      return null;
+      return questionsList;
     });
 
-    currentQuestion = questionsList[0];
+    // currentQuestion = questionsList[0];
 
     return (
       <div>
