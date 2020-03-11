@@ -5,7 +5,7 @@ export default function Questions() {
   const [results, setResults] = useState([]);
   const questionsList = [];
   let index = 0;
-  const [currentQuestion, setCurrentQuestion] = useState();
+  let [currentQuestion, setCurrentQuestion] = useState();
 
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
@@ -17,10 +17,10 @@ export default function Questions() {
   }, []);
 
   function nextQuestion() {
-    if (index < results.length) {
-      index++;
-      setCurrentQuestion(questionsList[index]);
-    }
+    index++;
+    setCurrentQuestion(questionsList[index]);
+    // currentQuestion = questionsList[index];
+    console.log(currentQuestion);
   }
 
   if (results.length > 0) {
@@ -28,15 +28,17 @@ export default function Questions() {
       questionsList.push(item.question);
       return questionsList;
     });
+  }
+  // useEffect(() => setCurrentQuestion(questionsList[0]), [questionsList]);
+  currentQuestion = questionsList[0];
 
-    // currentQuestion = questionsList[0];
-
+  if (results.length > 0) {
     return (
       <div>
         <h2>{currentQuestion}</h2>
         <Choices
-          incorrectChoices={results[0].incorrect_answers}
-          correctChoice={results[0].correct_answer}
+          incorrectChoices={results[index].incorrect_answers}
+          correctChoice={results[index].correct_answer}
         />
         <button onClick={() => nextQuestion()}>Next</button>
       </div>
