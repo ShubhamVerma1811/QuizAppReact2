@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Choices from "./Choices";
+import "./css/Questions.css";
+import entities from "entities";
 
 export default function Questions() {
   const [results, setResults] = useState([]);
   const questionsList = [];
-  let index = 0;
-  let [currentQuestion, setCurrentQuestion] = useState();
+  const [index, setIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState();
 
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=5")
+    fetch("https://opentdb.com/api.php?amount=10")
       .then(response => response.json())
       .then(data => {
         setResults(data.results);
@@ -17,10 +19,12 @@ export default function Questions() {
   }, []);
 
   function nextQuestion() {
-    index++;
-    setCurrentQuestion(questionsList[index]);
-    // currentQuestion = questionsList[index];
-    console.log(currentQuestion);
+    const h2 = document.querySelector("h2");
+    if (index < 9) {
+      setCurrentQuestion(questionsList[index + 1]);
+      setIndex(index + 1);
+      h2.innerText = "";
+    } else alert("That's it.Refresh to play again");
   }
 
   if (results.length > 0) {
@@ -29,18 +33,24 @@ export default function Questions() {
       return questionsList;
     });
   }
-  // useEffect(() => setCurrentQuestion(questionsList[0]), [questionsList]);
-  currentQuestion = questionsList[0];
+  useEffect(() => setCurrentQuestion(questionsList[index]), [
+    questionsList,
+    index
+  ]);
 
   if (results.length > 0) {
     return (
       <div>
-        <h2>{currentQuestion}</h2>
+        <h1>
+          Question {index + 1} /10:
+          {currentQuestion}
+        </h1>
         <Choices
           incorrectChoices={results[index].incorrect_answers}
           correctChoice={results[index].correct_answer}
         />
         <button onClick={() => nextQuestion()}>Next</button>
+        <h2></h2>
       </div>
     );
   } else {
