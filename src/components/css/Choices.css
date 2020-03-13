@@ -1,3 +1,4 @@
+
 li {
   list-style-type: none;
   display: block;
@@ -15,4 +16,12 @@ li:hover {
   transition-duration: 0.2s;
   box-shadow: 5px 5px 6px #c2b9ae;
   cursor: pointer;
+}
+
+.success {
+  color: rgb(78, 183, 91);
+}
+
+.failure {
+  color: rgb(255, 0, 0);
 }

@@ -1,9 +1,9 @@
+
 import React from "react";
 import "./css/Choices.css";
 
 export default function Choices(props) {
   let click = 0;
-  const h2 = document.querySelector("h2");
   let choicesList = [];
   let choiceList = props.incorrectChoices.concat(props.correctChoice);
 

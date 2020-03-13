@@ -16,7 +16,6 @@ export default function Questions() {
       .then(response => response.json())
       .then(data => {
         setResults(data.results);
-        console.log(data.results);
       });
   }, []);
 
