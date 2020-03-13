@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Choices from "./Choices";
 import "./css/Questions.css";
-import entities from "entities";
+// import entities from "entities";
+const entities = require("entities");
 
 export default function Questions() {
   const lis = document.querySelectorAll("li");
@@ -47,7 +48,7 @@ export default function Questions() {
       <div>
         <h1>
           Question {index + 1} /10:
-          {currentQuestion}
+          {entities.decodeHTML(currentQuestion)}
         </h1>
         <Choices
           incorrectChoices={results[index].incorrect_answers}

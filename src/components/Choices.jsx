@@ -1,6 +1,6 @@
-
 import React from "react";
 import "./css/Choices.css";
+const entities = require("entities");
 
 export default function Choices(props) {
   let click = 0;
@@ -36,7 +36,7 @@ export default function Choices(props) {
     <div>
       {choicesList.map(item => (
         <li onClick={checkResults} key={choicesList.indexOf(item)}>
-          {item}
+          {entities.decodeHTML(item)}
         </li>
       ))}
     </div>
