@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/QuizAppReact2/static/css/main.80eee81d.chunk.css",
-    "main.js": "/QuizAppReact2/static/js/main.20d86eda.chunk.js",
-    "main.js.map": "/QuizAppReact2/static/js/main.20d86eda.chunk.js.map",
+    "main.css": "/QuizAppReact2/static/css/main.cb0918aa.chunk.css",
+    "main.js": "/QuizAppReact2/static/js/main.52d975f5.chunk.js",
+    "main.js.map": "/QuizAppReact2/static/js/main.52d975f5.chunk.js.map",
     "runtime-main.js": "/QuizAppReact2/static/js/runtime-main.474ed33f.js",
     "runtime-main.js.map": "/QuizAppReact2/static/js/runtime-main.474ed33f.js.map",
-    "static/js/2.ce9cc33b.chunk.js": "/QuizAppReact2/static/js/2.ce9cc33b.chunk.js",
-    "static/js/2.ce9cc33b.chunk.js.map": "/QuizAppReact2/static/js/2.ce9cc33b.chunk.js.map",
+    "static/js/2.4059446e.chunk.js": "/QuizAppReact2/static/js/2.4059446e.chunk.js",
+    "static/js/2.4059446e.chunk.js.map": "/QuizAppReact2/static/js/2.4059446e.chunk.js.map",
     "index.html": "/QuizAppReact2/index.html",
-    "precache-manifest.7975c44ece62fc0bc72e8708ccbce70e.js": "/QuizAppReact2/precache-manifest.7975c44ece62fc0bc72e8708ccbce70e.js",
+    "precache-manifest.fef0ab38e935727dbf014c00116fe96d.js": "/QuizAppReact2/precache-manifest.fef0ab38e935727dbf014c00116fe96d.js",
     "service-worker.js": "/QuizAppReact2/service-worker.js",
-    "static/css/main.80eee81d.chunk.css.map": "/QuizAppReact2/static/css/main.80eee81d.chunk.css.map",
-    "static/js/2.ce9cc33b.chunk.js.LICENSE.txt": "/QuizAppReact2/static/js/2.ce9cc33b.chunk.js.LICENSE.txt"
+    "static/css/main.cb0918aa.chunk.css.map": "/QuizAppReact2/static/css/main.cb0918aa.chunk.css.map",
+    "static/js/2.4059446e.chunk.js.LICENSE.txt": "/QuizAppReact2/static/js/2.4059446e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.474ed33f.js",
-    "static/js/2.ce9cc33b.chunk.js",
-    "static/css/main.80eee81d.chunk.css",
-    "static/js/main.20d86eda.chunk.js"
+    "static/js/2.4059446e.chunk.js",
+    "static/css/main.cb0918aa.chunk.css",
+    "static/js/main.52d975f5.chunk.js"
   ]
 }
