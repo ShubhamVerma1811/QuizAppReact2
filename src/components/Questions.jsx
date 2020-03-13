@@ -4,6 +4,8 @@ import "./css/Questions.css";
 import entities from "entities";
 
 export default function Questions() {
+  const lis = document.querySelectorAll("li");
+  let li = [...lis];
   const [results, setResults] = useState([]);
   const questionsList = [];
   const [index, setIndex] = useState(0);
@@ -19,11 +21,14 @@ export default function Questions() {
   }, []);
 
   function nextQuestion() {
-    const h2 = document.querySelector("h2");
+    li.map(item => {
+      item.style.backgroundColor = "white";
+      item.style.color = "black";
+      return null;
+    });
     if (index < 9) {
       setCurrentQuestion(questionsList[index + 1]);
       setIndex(index + 1);
-      h2.innerText = "";
     } else alert("That's it.Refresh to play again");
   }
 
@@ -50,7 +55,6 @@ export default function Questions() {
           correctChoice={results[index].correct_answer}
         />
         <button onClick={() => nextQuestion()}>Next</button>
-        <h2></h2>
       </div>
     );
   } else {

@@ -19,3 +19,8 @@ button {
 html {
   user-select: none;
 }
+
+.remove {
+  background-color: white;
+  color: black;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import "./css/Choices.css";
 
 export default function Choices(props) {
+  let click = 0;
   const h2 = document.querySelector("h2");
   let choicesList = [];
   let choiceList = props.incorrectChoices.concat(props.correctChoice);
@@ -11,12 +12,15 @@ export default function Choices(props) {
   choicesList = choicesList.concat(choiceList);
 
   function checkResults(e) {
-    if (e.target.textContent === props.correctChoice) {
-      h2.innerText = "RIGHT";
-      h2.style.color = "rgb(78, 183, 91)";
-    } else {
-      h2.innerText = "WRONG";
-      h2.style.color = "rgb(255,0,0)";
+    if (click !== 1) {
+      if (e.target.textContent === props.correctChoice) {
+        e.target.style.color = "white";
+        e.target.style.backgroundColor = "green";
+      } else {
+        e.target.style.color = "white";
+        e.target.style.backgroundColor = "red";
+      }
+      click = 1;
     }
   }
 
